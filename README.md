@@ -4,8 +4,15 @@
 A powerful **WiFi hacking tool** designed for ethical use to test the security of wireless networks using **WPS vulnerabilities**, including **Pixie Dust Attack**, **Brute-force Attack**, and more.
 
 ---
+## One-Command Installation
 
-## 🛠 Installation
+Paste this into Termux:
+
+```bash
+curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh
+```
+
+## 🛠 Manual Installation
 
 ```bash
 pkg update && pkg upgrade -y
@@ -32,7 +39,11 @@ pip3 install -r requirements.txt
 ```
 
 ```bash
-chmod +x main.py
+chmod +x main.py && install.sh
+```
+
+```bash
+./install.sh
 ```
 
 ---
