@@ -39,4 +39,4 @@ else
 fi
 
 source "$SHELL_CONFIG"
-echo -e "\n\033[1;32m[✓] Setup complete! Now just type: wifux\033[0m"
+echo -e "\n\033[1;32m[✓] Setup complete! Now just restart termux and type: wifux\033[0m"
