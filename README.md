@@ -1,125 +1,65 @@
-# 📶 WiFuX - WiFi Hacker Tool
+<h1 align="center">Wifi Hacker Backup Version</h1>
+<h4 align="center">Hack WIfi Using Termux! (Requires Root)</h4>
 
-### 🔥 Hack WiFi Using Termux (Requires Root)  
-A powerful **WiFi hacking tool** designed for ethical use to test the security of wireless networks using **WPS vulnerabilities**, including **Pixie Dust Attack**, **Brute-force Attack**, and more.
-
----
-
-## 🛠 Installation
+### Installation :
 
 ```bash
 pkg update && pkg upgrade -y
-```
-
-```bash
 pkg install root-repo -y
-```
-
-```bash
 pkg install git tsu python wpa-supplicant pixiewps iw -y
-```
-
-```bash
-git clone https://github.com/msrofficial/WiFuX
-```
-
-```bash
-cd WiFuX
-```
-
-```bash
+git clone https://github.com/msrofficial/wi-fuck 
+cd wi-fuck 
 pip3 install -r requirements.txt
+chmod +x wi-fuck.py
 ```
+#### Help : `sudo python wi-fuck.py --help`
+#### Example : `sudo python wi-fuck.py -i wlan0 -K`
 
-```bash
-chmod +x main.py
-```
+#### Note: 
++ **First turn off your Wifi.**
++ **Turn on Hotspot.**
+- Show avaliable networks and start Pixie Dust attack on a specified network.
+- `sudo python wi-fuck.py -i wlan0 -K`
+- - Start Pixie Dust attack on a specified BSSID:
+`sudo python wi-fuck.py -i wlan0 -b 00:91:4C:C3:AC:28 -K`
+- Launch online WPS bruteforce with the specified first half of the PIN:
+- `sudo python wi-fuck.py -i wlan0 -b 00:90:4C:C1:AC:21 -B -p 1234`
+### Troubleshooting
+**"Device or resource busy (-16)" - Turn on Wifi and Then Turn off Wifi.**
 
----
+### License
 
-## 💻 Usage
+````
+MIT License
 
-### Show Help
-```bash
-sudo python main.py --help
-```
+Copyright (c) 2023 MSR🇧🇩
 
-### Scan & Start Pixie Dust Attack
-```bash
-sudo python main.py -i wlan0 -K
-```
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Start Pixie Dust Attack on Specific BSSID
-```bash
-sudo python main.py -i wlan0 -b 00:91:4C:C3:AC:28 -K
-```
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Launch Online WPS Brute-force Attack with PIN
-```bash
-sudo python main.py -i wlan0 -b 00:90:4C:C1:AC:21 -B -p 1234
-```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+````
 
----
++ **IF FAILED TURN OFF LOCATION IF TURNED ON.**
 
-## ⚠️ Notes
+Repo : <a href="https://github.com/msrofficial/wi-fuck"> Here </a>
 
-- **First turn off your WiFi.**
-- **Turn on Hotspot.**
-- If you get `"Device or resource busy (-16)"`, **turn on WiFi and then turn it off again**.
-- **If failed, turn off Location services if turned on.**
-
----
-
-## 📌 Disclaimer
-
-This tool is for educational and ethical purposes only. Do not use without proper authorization. The author is not responsible for any misuse or damage caused by this tool.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📱 WiFi Hacking with Android
-
-WiFuX is fully compatible with **Android devices running Termux**. You can perform advanced WiFi penetration testing directly from your phone with root access. (And a supported wireless interface e.g., Alfa adapter via OTG).
-
-Make sure:
-- Your device supports monitor mode.
-- You're using a rooted Android environment.
-- WiFi is turned off before running the script.
-
----
-
-## 🧑‍💻 Author
-
-**MD Sakibur Rahman (MSR)**  
-GitHub: [@msrofficial](https://github.com/msrofficial)  
-Facebook: [sakibur.msr](https://facebook.com/sakibur.msr)  
-Portfolio: [https://msrsakibur.netlify.app](https://msrsakibur.netlify.app)
-
----
-
-## ❤️ Connect with Me
-
+##### Modify History : ror => 🅼🅾🅽🆃🅾🆄🅲🅷🇧🇩
 <div align="center">
 <h3>━━━━ Connect with me ━━━━</h3>
-<a href="https://fb.com/sakibur.msr" target="_blank">
-  <img src="https://raw.githubusercontent.com/msrofficial/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" />
-</a>
-<a href="https://github.com/msrofficial">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux" alt="Visitor Count" />
-</a>
+<a href="https://fb.com/sakibur.msr" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Montouch" height="30" width="40" /></a>
 </div>
-
----
-
-## 📦 Repository
-
-[GitHub Repo](https://github.com/msrofficial/WiFuX)
-
----
-
-Happy hacking, stay ethical! 💻🔒
+<a href="https://github.com/sadman-11">  <img align="center" src="https://visitor-badge.laobi.icu/badge?style=flat-square&page_id=sadman-11.wifi-hack"></a>
