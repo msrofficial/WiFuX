@@ -46,6 +46,12 @@ chmod +x main.py && install.sh
 ./install.sh
 ```
 
+Restart your Termux and run:
+
+```bash
+wifux
+```
+
 ---
 
 ## 💻 Usage
