@@ -25,4 +25,4 @@ fi
 
 # Reload shell config
 source "$SHELL_CONFIG"
-echo "[✓] Now you can use 'wifux' command in Termux!So Restart your Termux"
+echo "[✓] Now you can use 'wifux' command in Termux!So Restart your Termux amd run wifux command in terminal"
