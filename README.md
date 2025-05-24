@@ -78,35 +78,13 @@ This tool is for educational and ethical purposes only. Do not use without prope
 
 ## 📄 License
 
-```
-MIT License
-
-Copyright (c) 2023 MSR🇧🇩
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📱 WiFi Hacking with Android
 
-WiFuX is fully compatible with **Android devices running Termux**. You can perform advanced WiFi penetration testing directly from your phone with root access and a supported wireless interface (e.g., Alfa adapter via OTG).
+WiFuX is fully compatible with **Android devices running Termux**. You can perform advanced WiFi penetration testing directly from your phone with root access. (And a supported wireless interface e.g., Alfa adapter via OTG).
 
 Make sure:
 - Your device supports monitor mode.
@@ -129,10 +107,10 @@ Portfolio: [https://msrsakibur.netlify.app](https://msrsakibur.netlify.app)
 <div align="center">
 <h3>━━━━ Connect with me ━━━━</h3>
 <a href="https://fb.com/sakibur.msr" target="_blank">
-  <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" />
+  <img src="https://raw.githubusercontent.com/msrofficial/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" />
 </a>
-<a href="https://github.com/sadman-11">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=sadman-11.wifi-hack" alt="Visitor Count" />
+<a href="https://github.com/msrofficial">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux" alt="Visitor Count" />
 </a>
 </div>
 
