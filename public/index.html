@@ -7,7 +7,299 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins :wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap @5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #7C3AED;
+            --accent-color: #DB2777;
+            --dark-bg: rgba(15, 23, 42, 0.95);
+            --light-bg: rgba(255, 255, 255, 0.1);
+            --glassmorphism: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            z-index: 1;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(129, 140, 248, 0.4);
+            transition: transform 0.5s ease;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-container:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .tagline i {
+            color: var(--accent-color);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 30px;
+            background: var(--light-bg);
+            margin: 10px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-custom {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .section {
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: var(--glassmorphism);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .command-box {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .command-box:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .input-group .copy-btn {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-group .copy-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .form-control[readonly] {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            font-family: 'Courier New', monospace;
+            padding: 12px 20px;
+        }
+
+        .social-icon {
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            color: #fff !important;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .footer-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .disclaimer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .list-check li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .list-check li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/msrofficial/WiFuX/main/assets/logo.png ">
 </head>
 <body>
@@ -27,6 +319,7 @@
                 <i class="fas fa-terminal"></i>
             </div>
             <p class="lead text-muted">A powerful WiFi hacking tool designed for ethical use to test the security of wireless networks using WPS vulnerabilities.</p>
+            <a href="#installation" class="btn btn-custom mt-3">Get Started</a>
         </header>
 
         <!-- Installation Section -->
@@ -173,12 +466,17 @@
         <!-- Notes Section -->
         <section class="mb-5 section glassmorphism p-4 rounded-4" id="notes">
             <h2 class="section-title"><i class="fas fa-exclamation-triangle me-2"></i>Notes</h2>
-            <ul class="list-unstyled mt-3 ms-3">
-                <li class="mb-2"><i class="fas fa-wifi me-2 text-primary"></i>First turn off your WiFi.</li>
-                <li class="mb-2"><i class="fas fa-hotjar me-2 text-danger"></i>Turn on Hotspot.</li>
-                <li class="mb-2"><i class="fas fa-mobile-alt me-2 text-info"></i>If you get "Device or resource busy (-16)", turn on WiFi and then turn it off again.</li>
-                <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-success"></i>If failed, turn off Location services if turned on.</li>
+            <ul class="list-check mt-3 ms-3">
+                <li><strong>First turn off your WiFi.</strong></li>
+                <li><strong>Turn on Hotspot.</strong></li>
+                <li>If you get "Device or resource busy (-16)", <strong>turn on WiFi and then turn it off again.</strong></li>
+                <li>If failed, <strong>turn off Location services if turned on.</strong></li>
             </ul>
+            
+            <div class="disclaimer mt-4 p-3 rounded-3">
+                <h3 class="h5 mb-2 text-danger">Disclaimer</h3>
+                <p class="mb-0">This tool is for educational and ethical purposes only. Do not use without proper authorization. The author is not responsible for any misuse or damage caused by this tool.</p>
+            </div>
         </section>
 
         <!-- Android Compatibility Section -->
@@ -186,10 +484,10 @@
             <h2 class="section-title"><i class="fab fa-android me-2"></i>Android Compatibility</h2>
             <p class="mt-3">WiFuX is fully compatible with Android devices running Termux. You can perform advanced WiFi penetration testing directly from your phone with root access and a supported wireless interface (e.g., Alfa adapter via OTG).</p>
             <p>Make sure:</p>
-            <ul class="list-unstyled mt-2 ms-3">
-                <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Your device supports monitor mode.</li>
-                <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>You're using a rooted Android environment.</li>
-                <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>WiFi is turned off before running the script.</li>
+            <ul class="list-check mt-2 ms-3">
+                <li>Your device supports monitor mode.</li>
+                <li>You're using a rooted Android environment.</li>
+                <li>WiFi is turned off before running the script.</li>
             </ul>
         </section>
 
@@ -257,7 +555,7 @@
                             <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg " 
                                  alt="Facebook" height="30" width="40" class="footer-icon">
                         </a>
-                        <a href="https://github.com/msrofficial ">
+                        <a href="https://github.com/msrofficial/WiFuX ">
                             <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux " 
                                  alt="Visitor Count" class="footer-icon">
                         </a>
@@ -281,9 +579,69 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap @5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js "></script>
     <script>
+        // Clipboard copy functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const textToCopy = button.dataset.copy;
+                
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Create toast element
+                    const toast = document.createElement('div');
+                    toast.className = 'toast align-items-center text-bg-success border-0';
+                    toast.setAttribute('role', 'alert');
+                    toast.style.position = 'fixed';
+                    toast.style.top = '1rem';
+                    toast.style.right = '1rem';
+                    toast.style.zIndex = '1055';
+                    
+                    // Toast content
+                    toast.innerHTML = `
+                        <div class="d-flex">
+                            <div class="toast-body">Copied to clipboard!</div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>`;
+                    
+                    // Add to DOM
+                    document.body.appendChild(toast);
+                    
+                    // Initialize Bootstrap toast
+                    const bootstrapToast = new bootstrap.Toast(toast, { delay: 2000 });
+                    bootstrapToast.show();
+                    
+                    // Remove toast after hiding
+                    toast.addEventListener('hidden.bs.toast', () => {
+                        toast.remove();
+                    });
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+        });
+
+        // Scroll animation for sections
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
         // Initialize particles.js
         particlesJS('particles-js', {
             "particles": {
@@ -354,4 +712,47 @@
                     }
                 }
             },
-            "
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
