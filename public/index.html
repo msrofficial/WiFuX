@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00ff88; /* Brighter green */
+            --primary: #00ff88;
             --dark: #1a1a2e;
             --light: #f8f9fa;
             --gray: #6c757d;
@@ -25,7 +25,6 @@
             color: var(--light);
             overflow-x: hidden;
             position: relative;
-            touch-action: pan-y; /* Prevent zoom gestures */
         }
         
         #particles-js {
@@ -445,202 +444,204 @@
         </div>
     </header>
     
-    <section class="hero">
-        <h2>WiFuX - WiFi Hacker Tool</h2>
-        <p>A powerful WiFi hacking tool designed for ethical use to test the security of wireless networks using WPS vulnerabilities, including Pixie Dust Attack, Brute-force Attack, and more.</p>
-        <a href="#installation" class="btn">Get Started</a>
-        <a href="#usage" class="btn btn-outline">View Usage</a>
-    </section>
-    
-    <section id="about" class="container">
-        <div class="section-title">
-            <h2>About WiFuX</h2>
-        </div>
+    <main>
+        <section class="hero">
+            <h2>WiFuX - WiFi Hacker Tool</h2>
+            <p>A powerful WiFi hacking tool designed for ethical use to test the security of wireless networks using WPS vulnerabilities, including Pixie Dust Attack, Brute-force Attack, and more.</p>
+            <a href="#installation" class="btn">Get Started</a>
+            <a href="#usage" class="btn btn-outline">View Usage</a>
+        </section>
         
-        <div class="card">
-            <h3>🔥 Hack WiFi Using Termux (Requires Root)</h3>
-            <p>WiFuX is a comprehensive WiFi penetration testing tool that leverages WPS vulnerabilities to assess wireless network security. It's designed to run on Android devices through Termux with root access.</p>
+        <section id="about" class="container">
+            <div class="section-title">
+                <h2>About WiFuX</h2>
+            </div>
             
-            <div class="features">
-                <div class="feature-item">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Pixie Dust Attack</h3>
-                    <p>Exploits vulnerabilities in WPS implementations to recover WPS PINs</p>
+            <div class="card">
+                <h3>🔥 Hack WiFi Using Termux (Requires Root)</h3>
+                <p>WiFuX is a comprehensive WiFi penetration testing tool that leverages WPS vulnerabilities to assess wireless network security. It's designed to run on Android devices through Termux with root access.</p>
+                
+                <div class="features">
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Pixie Dust Attack</h3>
+                        <p>Exploits vulnerabilities in WPS implementations to recover WPS PINs</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-hammer"></i>
+                        <h3>Brute-force Attack</h3>
+                        <p>Systematically checks all possible PIN combinations</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Android Compatible</h3>
+                        <p>Works on rooted Android devices with Termux</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="installation" class="container">
+            <div class="section-title">
+                <h2>Installation</h2>
+            </div>
+            
+            <div class="card">
+                <h3>One-Command Installation</h3>
+                <p>The easiest way to install WiFuX is with this single command:</p>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh</code>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Manual Installation</h3>
+                <p>Follow these steps for manual installation:</p>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>pkg update && pkg upgrade -y</code>
                 </div>
                 
-                <div class="feature-item">
-                    <i class="fas fa-hammer"></i>
-                    <h3>Brute-force Attack</h3>
-                    <p>Systematically checks all possible PIN combinations</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>pkg install root-repo -y</code>
                 </div>
                 
-                <div class="feature-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Android Compatible</h3>
-                    <p>Works on rooted Android devices with Termux</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>pkg install git tsu python wpa-supplicant pixiewps iw -y</code>
+                </div>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>git clone https://github.com/msrofficial/WiFuX</code>
+                </div>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>cd WiFuX</code>
+                </div>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>pip3 install -r requirements.txt</code>
+                </div>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>chmod +x main.py && install.sh</code>
+                </div>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>./install.sh</code>
+                </div>
+                
+                <p>After installation, restart your Termux and run:</p>
+                
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>wifux</code>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="installation" class="container">
-        <div class="section-title">
-            <h2>Installation</h2>
-        </div>
+        </section>
         
-        <div class="card">
-            <h3>One-Command Installation</h3>
-            <p>The easiest way to install WiFuX is with this single command:</p>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh</code>
+        <section id="usage" class="container">
+            <div class="section-title">
+                <h2>Usage</h2>
             </div>
-        </div>
+            
+            <div class="card">
+                <h3>Basic Commands</h3>
+                
+                <p>Show help menu:</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>sudo python main.py --help</code>
+                </div>
+                
+                <p>Scan and start Pixie Dust Attack:</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>sudo python main.py -i wlan0 -K</code>
+                </div>
+                
+                <p>Start Pixie Dust Attack on specific BSSID:</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>sudo python main.py -i wlan0 -b 00:91:4C:C3:AC:28 -K</code>
+                </div>
+                
+                <p>Launch online WPS Brute-force Attack with PIN:</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code>sudo python main.py -i wlan0 -b 00:90:4C:C1:AC:21 -B -p 1234</code>
+                </div>
+            </div>
+        </section>
         
-        <div class="card">
-            <h3>Manual Installation</h3>
-            <p>Follow these steps for manual installation:</p>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>pkg update && pkg upgrade -y</code>
+        <section id="notes" class="container">
+            <div class="section-title">
+                <h2>Important Notes</h2>
             </div>
             
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>pkg install root-repo -y</code>
+            <div class="card">
+                <div class="warning">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Disclaimer</h4>
+                    <p>This tool is for educational and ethical purposes only. Do not use without proper authorization. The author is not responsible for any misuse or damage caused by this tool.</p>
+                </div>
+                
+                <h3>Usage Tips</h3>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li>First turn off your WiFi</li>
+                    <li>Turn on Hotspot</li>
+                    <li>If you get "Device or resource busy (-16)", turn on WiFi and then turn it off again</li>
+                    <li>If failed, turn off Location services if turned on</li>
+                </ul>
+                
+                <h3 style="margin-top: 1.5rem;">Android Compatibility</h3>
+                <p>WiFuX is fully compatible with Android devices running Termux. You can perform advanced WiFi penetration testing directly from your phone with:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li>Root access</li>
+                    <li>Supported wireless interface (e.g., Alfa adapter via OTG)</li>
+                    <li>Device that supports monitor mode</li>
+                    <li>WiFi turned off before running the script</li>
+                </ul>
             </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>pkg install git tsu python wpa-supplicant pixiewps iw -y</code>
-            </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>git clone https://github.com/msrofficial/WiFuX</code>
-            </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>cd WiFuX</code>
-            </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>pip3 install -r requirements.txt</code>
-            </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>chmod +x main.py && install.sh</code>
-            </div>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>./install.sh</code>
-            </div>
-            
-            <p>After installation, restart your Termux and run:</p>
-            
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>wifux</code>
-            </div>
-        </div>
-    </section>
-    
-    <section id="usage" class="container">
-        <div class="section-title">
-            <h2>Usage</h2>
-        </div>
+        </section>
         
-        <div class="card">
-            <h3>Basic Commands</h3>
-            
-            <p>Show help menu:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>sudo python main.py --help</code>
+        <section id="contact" class="container">
+            <div class="section-title">
+                <h2>Connect with the Author</h2>
             </div>
             
-            <p>Scan and start Pixie Dust Attack:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>sudo python main.py -i wlan0 -K</code>
+            <div class="card" style="text-align: center;">
+                <h3>MD Sakibur Rahman (MSR)</h3>
+                <p>Creator of WiFuX</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/msrofficial" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://facebook.com/sakibur.msr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://msrsakibur.netlify.app" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                </div>
+                
+                <p style="margin-top: 1.5rem;">GitHub: <a href="https://github.com/msrofficial" target="_blank" style="color: var(--primary);">@msrofficial</a></p>
+                <p>Facebook: <a href="https://facebook.com/sakibur.msr" target="_blank" style="color: var(--primary);">sakibur.msr</a></p>
+                <p>Portfolio: <a href="https://msrsakibur.netlify.app" target="_blank" style="color: var(--primary);">msrsakibur.netlify.app</a></p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://github.com/msrofficial/WiFuX" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
             </div>
-            
-            <p>Start Pixie Dust Attack on specific BSSID:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>sudo python main.py -i wlan0 -b 00:91:4C:C3:AC:28 -K</code>
-            </div>
-            
-            <p>Launch online WPS Brute-force Attack with PIN:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
-                <code>sudo python main.py -i wlan0 -b 00:90:4C:C1:AC:21 -B -p 1234</code>
-            </div>
-        </div>
-    </section>
-    
-    <section id="notes" class="container">
-        <div class="section-title">
-            <h2>Important Notes</h2>
-        </div>
-        
-        <div class="card">
-            <div class="warning">
-                <h4><i class="fas fa-exclamation-triangle"></i> Disclaimer</h4>
-                <p>This tool is for educational and ethical purposes only. Do not use without proper authorization. The author is not responsible for any misuse or damage caused by this tool.</p>
-            </div>
-            
-            <h3>Usage Tips</h3>
-            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                <li>First turn off your WiFi</li>
-                <li>Turn on Hotspot</li>
-                <li>If you get "Device or resource busy (-16)", turn on WiFi and then turn it off again</li>
-                <li>If failed, turn off Location services if turned on</li>
-            </ul>
-            
-            <h3 style="margin-top: 1.5rem;">Android Compatibility</h3>
-            <p>WiFuX is fully compatible with Android devices running Termux. You can perform advanced WiFi penetration testing directly from your phone with:</p>
-            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                <li>Root access</li>
-                <li>Supported wireless interface (e.g., Alfa adapter via OTG)</li>
-                <li>Device that supports monitor mode</li>
-                <li>WiFi turned off before running the script</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="contact" class="container">
-        <div class="section-title">
-            <h2>Connect with the Author</h2>
-        </div>
-        
-        <div class="card" style="text-align: center;">
-            <h3>MD Sakibur Rahman (MSR)</h3>
-            <p>Creator of WiFuX</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/msrofficial" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://facebook.com/sakibur.msr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://msrsakibur.netlify.app" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
-            </div>
-            
-            <p style="margin-top: 1.5rem;">GitHub: <a href="https://github.com/msrofficial" target="_blank" style="color: var(--primary);">@msrofficial</a></p>
-            <p>Facebook: <a href="https://facebook.com/sakibur.msr" target="_blank" style="color: var(--primary);">sakibur.msr</a></p>
-            <p>Portfolio: <a href="https://msrsakibur.netlify.app" target="_blank" style="color: var(--primary);">msrsakibur.netlify.app</a></p>
-            
-            <div style="margin-top: 1.5rem;">
-                <a href="https://github.com/msrofficial/WiFuX" target="_blank" class="btn">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
     
     <footer>
         <p>© 2023 WiFuX - Licensed under MIT License</p>
@@ -649,202 +650,165 @@
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Enhanced mobile menu functionality
+        // Initialize particles.js
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
             const menuToggle = document.querySelector('.menu-toggle');
             const mobileMenu = document.querySelector('.mobile-menu');
             const closeMenu = document.querySelector('.close-menu');
             
-            // Toggle mobile menu
             function toggleMenu() {
                 mobileMenu.classList.toggle('active');
-                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
             }
             
             menuToggle.addEventListener('click', toggleMenu);
             closeMenu.addEventListener('click', toggleMenu);
             
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (mobileMenu.classList.contains('active') && 
-                    !mobileMenu.contains(e.target) && 
-                    e.target !== menuToggle) {
-                    toggleMenu();
-                }
-            });
-            
-            // Close menu when clicking on a link
-            const mobileLinks = document.querySelectorAll('.mobile-menu ul li a');
-            mobileLinks.forEach(link => {
+            // Close menu when clicking on links
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
             
-            // Prevent zooming on mobile devices
-            document.addEventListener('touchmove', function(e) {
-                if (e.scale !== 1) {
-                    e.preventDefault();
-                }
-            }, { passive: false });
+            // Copy to clipboard functionality
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const code = this.parentElement.querySelector('code').textContent;
+                    navigator.clipboard.writeText(code).then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = 'Copied!';
+                        this.style.backgroundColor = 'var(--primary)';
+                        this.style.color = '#111';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                            this.style.color = 'var(--light)';
+                        }, 2000);
+                    });
+                });
+            });
             
-            // Disable double-tap zoom
-            let lastTouchEnd = 0;
-            document.addEventListener('touchend', function(e) {
-                const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                }
-                lastTouchEnd = now;
-            }, { passive: false });
-        });
-        
-        // Particles.js configuration with faster movement
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     }
-                },
-                "color": {
-                    "value": "#00ff88" // Brighter green
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 120, // Closer connections
-                    "color": "#00ff88", // Brighter green
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 4, // Faster movement (increased from 2)
-                    "direction": "none",
-                    "random": true, // More random movement
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "window",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 120,
+                });
+            });
+            
+            // Initialize particles with faster movement
+            if (window.particlesJS) {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00ff88"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
                         "line_linked": {
-                            "opacity": 1
+                            "enable": true,
+                            "distance": 120,
+                            "color": "#00ff88",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 4,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
                         }
                     },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
+                    "interactivity": {
+                        "detect_on": "window",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 120,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 150,
+                                "duration": 0.3
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
                     },
-                    "repulse": {
-                        "distance": 150, // Stronger repulsion
-                        "duration": 0.3 // Faster response
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-        
-        // Copy to clipboard function
-        function copyToClipboard(button) {
-            const codeBlock = button.parentElement;
-            const code = codeBlock.querySelector('code').textContent;
-            
-            navigator.clipboard.writeText(code).then(() => {
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.style.backgroundColor = 'var(--primary)';
-                button.style.color = '#111';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                    button.style.color = 'var(--light)';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Update URL without jumping
-                    if (history.pushState) {
-                        history.pushState(null, null, targetId);
-                    } else {
-                        location.hash = targetId;
-                    }
-                }
-            });
+                    "retina_detect": true
+                });
+            }
         });
     </script>
 </body>
