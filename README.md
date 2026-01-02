@@ -39,7 +39,10 @@ pip3 install -r requirements.txt
 ```
 
 ```bash
-chmod +x main.py && install.sh
+chmod +x main.py
+```
+```
+chmod +x install.sh
 ```
 
 ```bash
