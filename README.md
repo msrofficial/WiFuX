@@ -44,9 +44,6 @@ bash install.sh
 
 ## Usage
 
-WiFuX is now globally accessible. You do not need to use the python command anymore. Just use the `wifux` command.
-
-### Interactive Mode (Auto-Scan)
 Simply type the command below to launch the interactive target selection menu:
 ```bash
 wifux
