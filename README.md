@@ -59,7 +59,8 @@ wifux
 ```bash
 cp /data/data/com.termux/files/usr/bin/tsu /data/data/com.termux/files/usr/bin/tsu.bak && \
 sed -i '281s|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su")|' /data/data/com.termux/files/usr/bin/tsu && \
-echo "✅ tsu patched successfully"```
+echo "✅ tsu patched successfully"
+```
 </details>
 
 ### Command-Line Arguments
