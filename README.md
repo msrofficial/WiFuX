@@ -48,6 +48,7 @@ Simply type the command below to launch the interactive target selection menu:
 ```bash
 wifux
 ```
+
 <details>
   <summary><strong>🔧 Click Here to Fix "No Superuser Binary Detected" Problem</strong></summary>
 
@@ -58,7 +59,7 @@ wifux
 ```bash
 cp /data/data/com.termux/files/usr/bin/tsu /data/data/com.termux/files/usr/bin/tsu.bak && \
 sed -i '281s|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su")|' /data/data/com.termux/files/usr/bin/tsu && \
-echo "✅ tsu patched successfully"
+echo "✅ tsu patched successfully"```
 
 ### Command-Line Arguments
 For advanced users who prefer passing arguments directly:
