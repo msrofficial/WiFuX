@@ -7,9 +7,9 @@
 </p></div>
 
 WiFuX is a powerful and automated WiFi security testing tool specifically optimized for Android devices running Termux. It evaluates the security of wireless networks by exploiting WPS vulnerabilities, seamlessly automating Pixie Dust and Brute-force attacks.
-<div><a href="https://github.com/msrofficial">
+<div><p align="center"><a href="https://github.com/msrofficial">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux" alt="Visitor Count" />
-</a></div>
+</a></p></div>
 ---
 
 ## Prerequisites
