@@ -48,7 +48,7 @@ Simply type the command below to launch the interactive target selection menu:
 ```bash
 wifux
 ```
-
+---
 <details>
   <summary><strong>🔧 Click Here to Fix "No Superuser Binary Detected" Problem</strong></summary>
 
