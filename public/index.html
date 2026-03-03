@@ -2,817 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="google-site-verification" content="HIecq8Gf8Th60mz0_OtRvsddh43EelqsH19wl5lzt5c" />
-    <title>WiFuX - WiFi Hacker Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    
+    <title>WiFuX v2.0 - Advanced WiFi Hacking Tool for Termux</title>
+    <meta name="title" content="WiFuX v2.0 - Advanced WiFi Hacking Tool for Termux">
+    <meta name="description" content="WiFuX is a powerful and automated WiFi security testing tool optimized for Android devices running Termux. Exploit WPS vulnerabilities effortlessly.">
+    <meta name="keywords" content="WiFuX, WiFi Hacking Tool, Termux WiFi Hack, WPS Vulnerability, Pixie Dust Attack, Brute-force Attack, MD Sakibur Rahman, msrofficial">
+    <meta name="author" content="MD Sakibur Rahman (MSR)">
+    <meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="HIecq8Gf8Th60mz0_OtRvsddh43EelqsH19wl5lzt5c" />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WiFuX - Advanced WiFi Security Testing">
+    <meta property="og:description" content="Automate Pixie Dust and Brute-force attacks on Termux with WiFuX. Built for ethical hackers and security researchers.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #00ff88;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background-color: var(--dark);
-        }
-        
-        header {
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(26, 26, 46, 0.9);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .logo i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-        
-        .logo h1 {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--light);
-        }
-        
-        nav ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-        
-        nav ul li a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: rgba(26, 26, 46, 0.98);
-            backdrop-filter: blur(15px);
-            padding: 1.5rem;
-            transition: right 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .mobile-menu ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-        
-        .mobile-menu ul li a {
-            color: var(--light);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-            display: block;
-            padding: 0.5rem 0;
-        }
-        
-        .mobile-menu ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .close-menu {
-            font-size: 1.5rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--light);
-        }
-        
-        .hero {
-            padding: 4rem 5% 2rem;
-            text-align: center;
-        }
-        
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        .hero p {
-            font-size: 1rem;
-            color: var(--gray);
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.5;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #111;
-            padding: 0.7rem 1.3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin: 0.3rem;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .container {
-            padding: 2rem 5%;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 1.7rem;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--primary);
-            bottom: -8px;
-            left: 25%;
-        }
-        
-        .card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-        }
-        
-        .code-block {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            position: relative;
-            font-family: 'Courier New', Courier, monospace;
-            overflow-x: auto;
-            font-size: 0.85rem;
-        }
-        
-        .copy-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: var(--light);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 0.8rem;
-        }
-        
-        .copy-btn:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 1.2rem;
-        }
-        
-        .feature-item i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-        
-        .feature-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-item p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            color: var(--light);
-            font-size: 1.3rem;
-            transition: color 0.3s, transform 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .warning {
-            background-color: rgba(231, 76, 60, 0.1);
-            border-left: 4px solid #e74c3c;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .warning h4 {
-            color: #e74c3c;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 1.5rem 5%;
-            background-color: rgba(0, 0, 0, 0.2);
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-            }
-            
-            .container {
-                padding: 1.5rem 5%;
-            }
-            
-            .card {
-                padding: 1.2rem;
-            }
-            
-            .code-block {
-                padding: 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            header {
-                padding: 0.8rem 5%;
-            }
-            
-            .hero {
-                padding: 3rem 5% 1.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.6rem;
-            }
-            
-            .btn {
-                padding: 0.6rem 1.1rem;
-                font-size: 0.85rem;
-                margin: 0.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
-    
+    <div class="bg-grid"></div>
+
     <header>
-        <div class="logo">
-            <i class="fas fa-wifi"></i>
-            <h1>WiFuX</h1>
-        </div>
-        
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#notes">Notes</a></li>
-            </ul>
-        </nav>
-        
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="mobile-menu">
-            <div class="mobile-menu-header">
-                <div class="logo">
-                    <i class="fas fa-wifi"></i>
-                    <h1>WiFuX</h1>
-                </div>
-                <button class="close-menu" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>WiFuX</span>
             </div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#notes">Notes</a></li>
-                <li><a href="https://github.com/msrofficial" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                <li><a href="https://facebook.com/sakibur.msr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-                <li><a href="https://msrsakibur.netlify.app" target="_blank"><i class="fas fa-globe"></i> Website</a></li>
-            </ul>
+            <a href="https://github.com/msrofficial/WiFuX" target="_blank" class="github-star-btn">
+                <i class="fas fa-star"></i> Star on GitHub
+            </a>
         </div>
     </header>
-    
-    <main>
+
+    <main class="container">
         <section class="hero">
-            <h2>WiFuX - WiFi Hacker Tool</h2>
-            <p>A powerful WiFi hacking tool designed for ethical use to test the security of wireless networks using WPS vulnerabilities, including Pixie Dust Attack, Brute-force Attack, and more.</p>
-            <a href="#installation" class="btn">Get Started</a>
-            <a href="#usage" class="btn btn-outline">View Usage</a>
-        </section>
-        
-        <section id="about" class="container">
-            <div class="section-title">
-                <h2>About WiFuX</h2>
-            </div>
+            <div class="badge">v2.0 - Global Installation</div>
+            <h1>Advanced <span class="text-gradient">WiFi Hacking</span> Tool</h1>
+            <p>A powerful and automated WiFi security testing tool specifically optimized for Android devices running Termux. It evaluates the security of wireless networks by exploiting WPS vulnerabilities, seamlessly automating Pixie Dust and Brute-force attacks.</p>
             
-            <div class="card">
-                <h3>🔥 Hack WiFi Using Termux (Requires Root)</h3>
-                <p>WiFuX is a comprehensive WiFi penetration testing tool that leverages WPS vulnerabilities to assess wireless network security. It's designed to run on Android devices through Termux with root access.</p>
-                
-                <div class="features">
-                    <div class="feature-item">
-                        <i class="fas fa-bolt"></i>
-                        <h3>Pixie Dust Attack</h3>
-                        <p>Exploits vulnerabilities in WPS implementations to recover WPS PINs</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <i class="fas fa-hammer"></i>
-                        <h3>Brute-force Attack</h3>
-                        <p>Systematically checks all possible PIN combinations</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Android Compatible</h3>
-                        <p>Works on rooted Android devices with Termux</p>
-                    </div>
+            <div class="hero-assets">
+                <img src="public/Screenshot_20260303-093705.jpg" alt="WiFuX Terminal Interface" class="app-screenshot" onerror="this.style.display='none'">
+                <div class="visitor-count">
+                    <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux" alt="Visitor Count">
                 </div>
             </div>
         </section>
-        
-        <section id="installation" class="container">
-            <div class="section-title">
-                <h2>Installation</h2>
-            </div>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-clipboard-list icon-primary"></i> Prerequisites</h2>
+            <p>Before installing WiFuX, ensure your device meets the following requirements:</p>
+            <ul class="custom-list">
+                <li>A <strong>rooted</strong> Android device.</li>
+                <li><strong>Termux</strong> application installed.</li>
+            </ul>
+        </section>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-download icon-primary"></i> Installation</h2>
+            <p>WiFuX v2.0 installs globally on your system. Once installed, you can run it from any directory.</p>
             
-            <div class="card">
-                <h3>One-Command Installation</h3>
-                <p>The easiest way to install WiFuX is with this single command:</p>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+            <div class="method-container">
+                <h3>Method 1: One-Command Installation (Recommended)</h3>
+                <p>Simply paste the following command into Termux to automatically download and set up everything:</p>
+                <div class="code-wrapper">
+                    <button class="copy-btn" title="Copy to clipboard"><i class="far fa-copy"></i></button>
                     <code>curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh</code>
                 </div>
             </div>
-            
-            <div class="card">
-                <h3>Manual Installation</h3>
-                <p>Follow these steps for manual installation:</p>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>pkg update && pkg upgrade -y</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>pkg install root-repo -y</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>pkg install git tsu python wpa-supplicant pixiewps iw -y</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>git clone https://github.com/msrofficial/WiFuX</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>cd WiFuX</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>pip3 install -r requirements.txt</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>chmod +x main.py && install.sh</code>
-                </div>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>./install.sh</code>
-                </div>
-                
-                <p>After installation, restart your Termux and run:</p>
-                
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>wifux</code>
+
+            <div class="method-container mt-4">
+                <h3>Method 2: Manual Installation</h3>
+                <p>If you prefer to clone and set up the repository manually, run the following commands sequentially:</p>
+                <div class="code-wrapper">
+                    <button class="copy-btn" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                    <code>pkg update && pkg upgrade -y
+pkg install root-repo git tsu python wpa-supplicant pixiewps iw -y
+git clone https://github.com/msrofficial/WiFuX
+cd WiFuX
+chmod +x install.sh
+bash install.sh</code>
                 </div>
             </div>
         </section>
-        
-        <section id="usage" class="container">
-            <div class="section-title">
-                <h2>Usage</h2>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-terminal icon-primary"></i> Usage</h2>
+            <p>Simply type the command below to run the tool from anywhere:</p>
+            <div class="code-wrapper">
+                <button class="copy-btn"><i class="far fa-copy"></i></button>
+                <code>wifux</code>
             </div>
+
+            <div class="accordion mt-4">
+                <div class="accordion-header">
+                    <span><i class="fas fa-wrench"></i> Click Here to Fix "No Superuser Binary Detected"</span>
+                    <i class="fas fa-chevron-down chevron"></i>
+                </div>
+                <div class="accordion-body">
+                    <p>Run this command in your Termux to patch the tsu binary:</p>
+                    <div class="code-wrapper">
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        <code>cp /data/data/com.termux/files/usr/bin/tsu /data/data/com.termux/files/usr/bin/tsu.bak && \
+sed -i '281s|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su")|' /data/data/com.termux/files/usr/bin/tsu && \
+echo "✅ tsu patched successfully"</code>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Command-Line Arguments</h3>
+            <p>For advanced users who prefer passing arguments directly:</p>
             
-            <div class="card">
-                <h3>Basic Commands</h3>
-                
-                <p>Show help menu:</p>
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>sudo python main.py --help</code>
+            <div class="cli-grid">
+                <div class="cli-item">
+                    <span>Show Help Menu</span>
+                    <code>wifux --help</code>
                 </div>
-                
-                <p>Scan and start Pixie Dust Attack:</p>
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>sudo python main.py -i wlan0 -K</code>
+                <div class="cli-item">
+                    <span>Start Pixie Dust Attack</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -K</code>
                 </div>
-                
-                <p>Start Pixie Dust Attack on specific BSSID:</p>
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>sudo python main.py -i wlan0 -b 00:91:4C:C3:AC:28 -K</code>
+                <div class="cli-item">
+                    <span>Online WPS Brute-force</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -B -p &lt;PIN&gt;</code>
                 </div>
-                
-                <p>Launch online WPS Brute-force Attack with PIN:</p>
-                <div class="code-block">
-                    <button class="copy-btn">Copy</button>
-                    <code>sudo python main.py -i wlan0 -b 00:90:4C:C1:AC:21 -B -p 1234</code>
+                <div class="cli-item">
+                    <span>Update WiFuX</span>
+                    <code>wifux update</code>
                 </div>
             </div>
         </section>
-        
-        <section id="notes" class="container">
-            <div class="section-title">
-                <h2>Important Notes</h2>
-            </div>
-            
-            <div class="card">
-                <div class="warning">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Disclaimer</h4>
-                    <p>This tool is for educational and ethical purposes only. Do not use without proper authorization. The author is not responsible for any misuse or damage caused by this tool.</p>
-                </div>
-                
-                <h3>Usage Tips</h3>
-                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                    <li>First turn off your WiFi</li>
-                    <li>Turn on Hotspot</li>
-                    <li>If you get "Device or resource busy (-16)", turn on WiFi and then turn it off again</li>
-                    <li>If failed, turn off Location services if turned on</li>
-                </ul>
-                
-                <h3 style="margin-top: 1.5rem;">Android Compatibility</h3>
-                <p>WiFuX is fully compatible with Android devices running Termux. You can perform advanced WiFi penetration testing directly from your phone with:</p>
-                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                    <li>Root access</li>
-                    <li>Supported wireless interface (e.g., Alfa adapter via OTG)</li>
-                    <li>Device that supports monitor mode</li>
-                    <li>WiFi turned off before running the script</li>
-                </ul>
-            </div>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-life-ring icon-primary"></i> Troubleshooting & Notes</h2>
+            <p>If you encounter issues during the attack, follow these steps:</p>
+            <ul class="custom-list alert-list">
+                <li><strong>Turn off your device's WiFi</strong> before starting the tool.</li>
+                <li><strong>Turn on your Mobile Hotspot</strong> (this prevents Android from interfering with the wlan0 interface).</li>
+                <li>If you receive a <em>"Device or resource busy (-16)"</em> error, manually turn your WiFi on and then immediately turn it back off.</li>
+                <li>If the tool fails to scan or authenticate, try <strong>turning off your device's Location/GPS services</strong>.</li>
+            </ul>
         </section>
-        
-        <section id="contact" class="container">
-            <div class="section-title">
-                <h2>Connect with the Author</h2>
-            </div>
-            
-            <div class="card" style="text-align: center;">
-                <h3>MD Sakibur Rahman (MSR)</h3>
-            
-                
-                <div class="social-links">
-                    <a href="https://github.com/msrofficial" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://facebook.com/sakibur.msr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://msrsakibur.netlify.app" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
-                </div>
-                
-                <p style="margin-top: 1.5rem;">GitHub: <a href="https://github.com/msrofficial" target="_blank" style="color: var(--primary);">@msrofficial</a></p>
-                <p>Facebook: <a href="https://facebook.com/sakibur.msr" target="_blank" style="color: var(--primary);">sakibur.msr</a></p>
-                <p>Portfolio: <a href="https://msrsakibur.netlify.app" target="_blank" style="color: var(--primary);">msrsakibur.netlify.app</a></p>
-                
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://github.com/msrofficial/WiFuX" target="_blank" class="btn">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-            </div>
+
+        <section class="card disclaimer-card box-reveal">
+            <h2><i class="fas fa-exclamation-triangle"></i> Disclaimer</h2>
+            <p>This tool is provided for <strong>educational and ethical penetration testing purposes only</strong>. You are only authorized to use WiFuX on networks that you own or have explicit permission to test. The author is not responsible for any misuse, damage, or illegal activities caused by this tool.</p>
         </section>
     </main>
-    
+
     <footer>
-         <a href='http://www.freevisitorcounters.com'></a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=de5e83679ca52b7d04514a4253166002fd7eed39'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1430352/t/0"></script>
-        <p>© 2023 WiFuX - Licensed under MIT License</p>
-        <p style="margin-top: 0.5rem;">Happy hacking, stay ethical! <i class="fas fa-heart" style="color: #e74c3c;"></i></p>
+        <div class="container footer-content">
+            <div class="author-info">
+                <h3>MD Sakibur Rahman (MSR)</h3>
+                <div class="socials">
+                    <a href="https://github.com/msrofficial" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://facebook.com/sakibur.msr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://msrsakibur.netlify.app" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                </div>
+            </div>
+            <div class="license">
+                <p>Licensed under the <strong>MIT License</strong>.</p>
+                <p>&copy; 2026 WiFuX Project.</p>
+            </div>
+        </div>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Initialize particles.js
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const closeMenu = document.querySelector('.close-menu');
-            
-            function toggleMenu() {
-                mobileMenu.classList.toggle('active');
-            }
-            
-            menuToggle.addEventListener('click', toggleMenu);
-            closeMenu.addEventListener('click', toggleMenu);
-            
-            // Close menu when clicking on links
-            document.querySelectorAll('.mobile-menu a').forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-            
-            // Copy to clipboard functionality
-            document.querySelectorAll('.copy-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const code = this.parentElement.querySelector('code').textContent;
-                    navigator.clipboard.writeText(code).then(() => {
-                        const originalText = this.textContent;
-                        this.textContent = 'Copied!';
-                        this.style.backgroundColor = 'var(--primary)';
-                        this.style.color = '#111';
-                        
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                            this.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                            this.style.color = 'var(--light)';
-                        }, 2000);
-                    });
-                });
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Initialize particles with faster movement
-            if (window.particlesJS) {
-                particlesJS("particles-js", {
-                    "particles": {
-                        "number": {
-                            "value": 80,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
-                        "color": {
-                            "value": "#00ff88"
-                        },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.5,
-                            "random": false,
-                            "anim": {
-                                "enable": false,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": false,
-                                "speed": 40,
-                                "size_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 120,
-                            "color": "#00ff88",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 4,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "detect_on": "window",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 120,
-                                "line_linked": {
-                                    "opacity": 1
-                                }
-                            },
-                            "bubble": {
-                                "distance": 400,
-                                "size": 40,
-                                "duration": 2,
-                                "opacity": 8,
-                                "speed": 3
-                            },
-                            "repulse": {
-                                "distance": 150,
-                                "duration": 0.3
-                            },
-                            "push": {
-                                "particles_nb": 4
-                            },
-                            "remove": {
-                                "particles_nb": 2
-                            }
-                        }
-                    },
-                    "retina_detect": true
-                });
-            }
-        });
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
