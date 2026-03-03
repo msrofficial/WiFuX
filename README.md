@@ -17,7 +17,6 @@ WiFuX is a powerful and automated WiFi security testing tool specifically optimi
 Before installing WiFuX, ensure your device meets the following requirements:
 * A rooted Android device.
 * Termux application installed.
-* A wireless interface capable of monitor mode (e.g., native wlan0 or an external adapter via OTG).
 
 ---
 
@@ -48,7 +47,7 @@ bash install.sh
 
 ## Usage
 
-Simply type the command below to launch the interactive target selection menu:
+Simply type the command below to run the tool:
 ```bash
 wifux
 ```
