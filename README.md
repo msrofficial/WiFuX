@@ -48,6 +48,12 @@ Simply type the command below to launch the interactive target selection menu:
 ```bash
 wifux
 ```
+<details>
+  <summary>Click here to Fix "No Superuser Binary Detected. Are you rooted?" Problem</summary>
+Run this command:
+
+```cp /data/data/com.termux/files/usr/bin/tsu /data/data/com.termux/files/usr/bin/tsu.bak && sed -i '281s|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su")|' /data/data/com.termux/files/usr/bin/tsu && echo "✅ tsu patched successfully"```
+</details>
 
 ### Command-Line Arguments
 For advanced users who prefer passing arguments directly:
