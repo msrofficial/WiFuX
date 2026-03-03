@@ -12,7 +12,7 @@ WiFuX is a powerful and automated WiFi security testing tool specifically optimi
 </a></p></div>
 ---
 
-## Prerequisites
+## Need
 
 Before installing WiFuX, ensure your device meets the following requirements:
 * A rooted Android device.
