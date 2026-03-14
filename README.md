@@ -37,10 +37,20 @@ If you prefer to clone and set up the repository manually, run the following com
 
 ```bash
 pkg update && pkg upgrade -y
+```
+```bash
 pkg install root-repo git tsu python wpa-supplicant pixiewps iw -y
+```
+```bash
 git clone https://github.com/msrofficial/WiFuX
+```
+```bash
 cd WiFuX
+```
+```bash
 chmod +x install.sh
+```
+```bash
 bash install.sh
 ```
 
