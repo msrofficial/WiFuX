@@ -52,6 +52,12 @@ Simply type the command below to run the tool:
 ```bash
 wifux
 ```
+## Update WiFuX
+To fetch and install the latest updates from the GitHub repository, simply run:
+```bash
+wifux update
+```
+
 ---
 <details>
   <summary><strong>🔧 Click Here to Fix "No Superuser Binary Detected" Problem</strong></summary>
@@ -82,12 +88,6 @@ For advanced users who prefer passing arguments directly:
   ```bash
   wifux -i wlan0 -b <TARGET_MAC_ADDRESS> -B -p <PIN>
   ```
-
-### Update WiFuX
-To fetch and install the latest updates from the GitHub repository, simply run:
-```bash
-wifux update
-```
 
 ---
 
