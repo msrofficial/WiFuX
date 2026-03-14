@@ -73,6 +73,8 @@ echo "✅ tsu patched successfully"
 ```
 </details>
 
+---
+
 ### Command-Line Arguments
 For advanced users who prefer passing arguments directly:
 
