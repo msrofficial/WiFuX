@@ -29,7 +29,7 @@ WiFuX v2.0 installs globally on your system. Once installed, you can run it from
 Simply paste the following command into Termux to automatically download and set up everything:
 
 ```bash
-curl -sO https://raw.githubusercontent.com/msrofficial/fix-termux-root/main/fix.sh && chmod +x fix.sh && ./fix.sh && curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh
+curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh
 ```
 
 ### Method 2: Manual Installation
