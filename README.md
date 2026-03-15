@@ -77,8 +77,7 @@ wifux update
 ### 📌 Run this command:
 
 ```bash
-pkg update && pkg install tsu -y
-cp $PREFIX/bin/tsu $PREFIX/bin/tsu.bak && sed -i 's|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su" "/sbin/su")|' $PREFIX/bin/tsu && echo "✅ tsu patched successfully"
+curl -sO https://raw.githubusercontent.com/msrofficial/fix-termux-root/main/fix.sh && chmod +x fix.sh && ./fix.sh
 ```
 Or <a href="https://github.com/msrofficial/fix-termux-root">Click Here</a> for manual solution.
 </details>
