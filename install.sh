@@ -10,6 +10,8 @@ echo -e "${GREEN}[+] Installing Python dependencies...${RESET}"
 pip install -r requirements.txt --break-system-packages
 
 chmod +x main.py
+chmod +x contact.py
+chmod +x fix.sh
 
 echo -e "${GREEN}[+] Setting up 'wifux' command...${RESET}"
 
@@ -26,12 +28,24 @@ if [ "\$1" == "update" ]; then
     echo -e "\033[1;32m[+] Fetching latest updates from MSR's GitHub...\033[0m"
     git reset --hard HEAD > /dev/null 2>&1
     git pull origin main
-    
+
     echo -e "\033[1;32m[+] Checking for new requirements...\033[0m"
     pip install -r requirements.txt --break-system-packages > /dev/null 2>&1
-    
-    chmod +x main.py
+
+    chmod +x main.py contact.py fix.sh
     echo -e "\033[1;32m[✓] WiFuX updated successfully!\033[0m"
+    exit 0
+fi
+
+# Contact Logic
+if [ "\$1" == "contact" ]; then
+    python contact.py
+    exit 0
+fi
+
+# Fix Logic
+if [ "\$1" == "fix" ]; then
+    bash fix.sh
     exit 0
 fi
 
@@ -47,3 +61,4 @@ chmod +x "$WIFUX_BIN"
 
 echo -e "\n${GREEN}[✓] Local setup complete!${RESET}"
 echo -e "${YELLOW}[✓] Type 'wifux' from anywhere to run the tool.${RESET}"
+echo -e "${YELLOW}[✓] Commands: wifux | wifux update | wifux contact | wifux fix${RESET}"
