@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-# Obfuscated with MSR Obfuscator v5.0 (ULTRA Edition)
 # Author: @msrofficial
 # GitHub: https://github.com/msrofficial
 # Time: Tue Apr 07 17:45:11 2026
-# Security: ULTRA — DO NOT REVERSE ENGINEER
 # ──────────────────────────────────────────────
 
 import base64, zlib, marshal
