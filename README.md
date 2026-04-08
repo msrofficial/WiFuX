@@ -176,6 +176,8 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 | Telegram | [@msrofficial](https://t.me/msrofficial) |
 | Website | [msrsakibur.netlify.app](https://msrsakibur.netlify.app) |
 
+Honorable mentions include: rofl0r, Rayhan, Alamin, Sojib, Sanji, Mustakin, Sakib, rizzi
+
 ---
 
 <div align="center">
