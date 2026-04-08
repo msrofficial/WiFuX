@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    
+    <title>WiFuX v2.0 - Advanced WiFi Hacking Tool for Termux</title>
+    <meta name="title" content="WiFuX v2.0 - Advanced WiFi Hacking Tool for Termux">
+    <meta name="description" content="WiFuX is a powerful and automated WiFi security testing tool optimized for Android devices running Termux. Exploit WPS vulnerabilities effortlessly.">
+    <meta name="keywords" content="WiFuX, WiFi Hacking Tool, Termux WiFi Hack, WPS Vulnerability, Pixie Dust Attack, Brute-force Attack, MD Sakibur Rahman, msrofficial">
+    <meta name="author" content="MD Sakibur Rahman (MSR)">
+    <meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="HIecq8Gf8Th60mz0_OtRvsddh43EelqsH19wl5lzt5c" />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WiFuX - Advanced WiFi Security Testing">
+    <meta property="og:description" content="Automate Pixie Dust and Brute-force attacks on Termux with WiFuX. Built for ethical hackers and security researchers.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>WiFuX</span>
+            </div>
+            <a href="https://github.com/msrofficial/WiFuX" target="_blank" class="github-star-btn">
+                <i class="fas fa-star"></i> Star on GitHub
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="badge">v2.0 - Global Installation</div>
+            <h1>Advanced <span class="text-gradient">WiFi Hacking</span> Tool</h1>
+            <p>A powerful and automated WiFi security testing tool specifically optimized for Android devices running Termux. It evaluates the security of wireless networks by exploiting WPS vulnerabilities, seamlessly automating Pixie Dust and Brute-force attacks.</p>
+            
+            <div class="hero-assets">
+                <img src="public/Screenshot_20260303-093705.jpg" alt="WiFuX Terminal Interface" class="app-screenshot" onerror="this.style.display='none'">
+                <div class="visitor-count">
+                    <img src="https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux" alt="Visitor Count">
+                </div>
+            </div>
+        </section>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-clipboard-list icon-primary"></i> Prerequisites</h2>
+            <p>Before installing WiFuX, ensure your device meets the following requirements:</p>
+            <ul class="custom-list">
+                <li>A <strong>rooted</strong> Android device.</li>
+                <li><strong>Termux</strong> application installed.</li>
+            </ul>
+        </section>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-download icon-primary"></i> Installation</h2>
+            <p>WiFuX v2.0 installs globally on your system. Once installed, you can run it from any directory.</p>
+            
+            <div class="method-container">
+                <h3>Method 1: One-Command Installation (Recommended)</h3>
+                <p>Simply paste the following command into Termux to automatically download and set up everything:</p>
+                <div class="code-wrapper">
+                    <button class="copy-btn" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                    <code>curl -sLo installer.sh https://raw.githubusercontent.com/msrofficial/WiFuX/main/installer.sh && bash installer.sh</code>
+                </div>
+            </div>
+
+            <div class="method-container mt-4">
+                <h3>Method 2: Manual Installation</h3>
+                <p>If you prefer to clone and set up the repository manually, run the following commands sequentially:</p>
+                <div class="code-wrapper">
+                    <button class="copy-btn" title="Copy to clipboard"><i class="far fa-copy"></i></button>
+                    <code>pkg update && pkg upgrade -y
+pkg install root-repo git tsu python wpa-supplicant pixiewps iw -y
+git clone https://github.com/msrofficial/WiFuX
+cd WiFuX
+chmod +x install.sh
+bash install.sh</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-terminal icon-primary"></i> Usage</h2>
+            <p>Simply type the command below to run the tool from anywhere:</p>
+            <div class="code-wrapper">
+                <button class="copy-btn"><i class="far fa-copy"></i></button>
+                <code>wifux</code>
+            </div>
+
+            <div class="accordion mt-4">
+                <div class="accordion-header">
+                    <span><i class="fas fa-wrench"></i> Click Here to Fix "No Superuser Binary Detected"</span>
+                    <i class="fas fa-chevron-down chevron"></i>
+                </div>
+                <div class="accordion-body">
+                    <p>Run this command in your Termux to patch the tsu binary:</p>
+                    <div class="code-wrapper">
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        <code>cp /data/data/com.termux/files/usr/bin/tsu /data/data/com.termux/files/usr/bin/tsu.bak && \
+sed -i '281s|^SU_BINARY_SEARCH=.*|SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/debug_ramdisk/su")|' /data/data/com.termux/files/usr/bin/tsu && \
+echo "✅ tsu patched successfully"</code>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Command-Line Arguments</h3>
+            <p>For advanced users who prefer passing arguments directly:</p>
+            
+            <div class="cli-grid">
+                <div class="cli-item">
+                    <span>Interactive Menu (No Args)</span>
+                    <code>wifux</code>
+                </div>
+                <div class="cli-item">
+                    <span>Show Help Menu</span>
+                    <code>wifux --help</code>
+                </div>
+                <div class="cli-item">
+                    <span>Pixie Dust Attack</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -K</code>
+                </div>
+                <div class="cli-item">
+                    <span>Online WPS Brute-force</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -B</code>
+                </div>
+                <div class="cli-item">
+                    <span>One-Pass Auto Scanner</span>
+                    <code>wifux -i wlan0 --auto</code>
+                </div>
+                <div class="cli-item">
+                    <span>Scan &amp; Auto Attack (Loop)</span>
+                    <code>wifux -i wlan0 -K -l</code>
+                </div>
+                <div class="cli-item">
+                    <span>Resume Bruteforce Session</span>
+                    <code>wifux -i wlan0 --resume-session &lt;MAC&gt;</code>
+                </div>
+                <div class="cli-item">
+                    <span>List Saved Sessions</span>
+                    <code>wifux -i wlan0 --list-sessions</code>
+                </div>
+                <div class="cli-item">
+                    <span>Signal Analysis Before Attack</span>
+                    <code>wifux -i wlan0 --signal-analysis</code>
+                </div>
+                <div class="cli-item">
+                    <span>Check Target Vulnerability</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; --check-vuln</code>
+                </div>
+                <div class="cli-item">
+                    <span>Detect Weak WPS Algorithms</span>
+                    <code>wifux -i wlan0 --detect-weak-algo</code>
+                </div>
+                <div class="cli-item">
+                    <span>List Pixie Dust Vulnerable Routers</span>
+                    <code>wifux --pixie-list</code>
+                </div>
+                <div class="cli-item">
+                    <span>List All Router Models in DB</span>
+                    <code>wifux --list-all-models</code>
+                </div>
+                <div class="cli-item">
+                    <span>Generate HTML Report</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -K --html-report</code>
+                </div>
+                <div class="cli-item">
+                    <span>Change MAC on Each Attempt</span>
+                    <code>wifux -i wlan0 -b &lt;MAC&gt; -B -M</code>
+                </div>
+                <div class="cli-item">
+                    <span>Reverse Scan Order</span>
+                    <code>wifux -i wlan0 -r</code>
+                </div>
+                <div class="cli-item">
+                    <span>Update WiFuX</span>
+                    <code>wifux update</code>
+                </div>
+                <div class="cli-item">
+                    <span>Contact MSR</span>
+                    <code>wifux contact</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="card box-reveal">
+            <h2><i class="fas fa-life-ring icon-primary"></i> Troubleshooting & Notes</h2>
+            <p>If you encounter issues during the attack, follow these steps:</p>
+            <ul class="custom-list alert-list">
+                <li><strong>Turn off your device's WiFi</strong> before starting the tool.</li>
+                <li><strong>Turn on your Mobile Hotspot</strong> (this prevents Android from interfering with the wlan0 interface).</li>
+                <li>If you receive a <em>"Device or resource busy (-16)"</em> error, manually turn your WiFi on and then immediately turn it back off.</li>
+                <li>If the tool fails to scan or authenticate, try <strong>turning off your device's Location/GPS services</strong>.</li>
+            </ul>
+        </section>
+
+        <section class="card disclaimer-card box-reveal">
+            <h2><i class="fas fa-exclamation-triangle"></i> Disclaimer</h2>
+            <p>This tool is provided for <strong>educational and ethical penetration testing purposes only</strong>. You are only authorized to use WiFuX on networks that you own or have explicit permission to test. The author is not responsible for any misuse, damage, or illegal activities caused by this tool.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="author-info">
+                <h3>MD Sakibur Rahman (MSR)</h3>
+                <div class="socials">
+                    <a href="https://github.com/msrofficial" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://facebook.com/sakibur.msr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://msrsakibur.netlify.app" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                </div>
+            </div>
+            <div class="license">
+                <p>Licensed under the <strong>MIT License</strong>.</p>
+                <p>&copy; 2026 WiFuX Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
