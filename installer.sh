@@ -74,6 +74,18 @@ if [ "\$1" == "contact" ]; then
     exit 0
 fi
 
+# Menu Logic
+if [ "\$1" == "menu" ]; then
+    sudo python main.py
+    exit 0
+fi
+
+# Old Logic
+if [ "\$1" == "old" ]; then
+    sudo python w1.py -i wlan0 -K
+    exit 0
+fi
+
 # Run Logic
 if [ -z "\$1" ]; then
     sudo python main.py -i wlan0 -K
@@ -99,6 +111,8 @@ echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux update\033[0m  → Update WiFuX
 echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux help\033[0m    → Show help & usage info"
 echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux fix\033[0m     → Fix root/superuser issues"
 echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux contact\033[0m → Contact the developer (MSR)"
+echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux menu\033[0m    → Run WiFuX interactive menu"
+echo -e "\033[1;32m  │\033[0m  \033[1;37mwifux old\033[0m     → Run WiFuX old engine (w1.py)"
 echo -e "\033[1;32m  └───────────────────────────────────────────┘\033[0m"
 
 echo -e "\n\033[1;31m  ⚡ IMPORTANT — If 'wifux' shows:\033[0m"

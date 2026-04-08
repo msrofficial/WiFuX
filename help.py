@@ -63,6 +63,7 @@ def show_menu():
   {G}6{RS}  →  {W}Usage Examples (Copy-Paste ready){RS}
   {G}7{RS}  →  {W}Troubleshooting common errors{RS}
   {G}8{RS}  →  {W}Important warnings & rules{RS}
+  {G}9{RS}  →  {W}Available wifux commands (quick reference){RS}
 
   {R}0{RS}  →  {W}Exit{RS}
 
@@ -309,7 +310,7 @@ def section_commands():
   {G}--pixie-list{RS}       Show all Pixie Dust vulnerable routers
   {G}--list-all-models{RS}  Show all router models in database
 
-{Y}  ─── Android / Termux ───{RS}
+{Y}  ─── Quick Launch ───{RS}\n  {G}wifux{RS}              Run with default settings (wlan0 + Pixie Dust)\n  {G}wifux menu{RS}         Open WiFuX interactive menu (no auto-attack)\n  {G}wifux old{RS}          Run old engine (w1.py) with wlan0\n  {G}wifux update{RS}       Update WiFuX to latest version\n  {G}wifux help{RS}         Show this help guide\n  {G}wifux fix{RS}          Fix root/superuser issues\n  {G}wifux contact{RS}      Contact the developer (MSR)\n\n{Y}  ─── Android / Termux ───{RS}
   {G}--dts{RS}              Don't touch Android WiFi settings
   {G}--mtk-wifi{RS}         Enable MediaTek WiFi driver
   {G}--handle-rfkill{RS}    Auto-unblock if rfkill is blocking WiFi
@@ -577,6 +578,64 @@ def section_warnings():
     pause()
 
 # ────────────────────────────────────────────
+def section_wifux_commands():
+    clear()
+    banner()
+    print(f'''
+{LINE}
+{Y}  9. Available wifux Commands — Quick Reference{RS}
+{LINE}
+
+{LINE2}
+{G}  ─── Basic Commands ───{RS}
+{LINE2}
+
+  {G}wifux{RS}
+  ↳ Run WiFuX with default settings
+     (interface: wlan0, attack: Pixie Dust)
+
+  {G}wifux menu{RS}
+  ↳ Open WiFuX interactive menu without auto-attack
+     (runs: sudo python main.py)
+
+  {G}wifux old{RS}
+  ↳ Run the old WiFuX engine (w1.py)
+     (runs: sudo python w1.py -i wlan0 -K)
+
+{LINE2}
+{G}  ─── Tool Management ───{RS}
+{LINE2}
+
+  {G}wifux update{RS}
+  ↳ Fetch & install latest updates from GitHub
+
+  {G}wifux help{RS}
+  ↳ Open this help guide
+
+  {G}wifux fix{RS}
+  ↳ Fix root / superuser issues in Termux
+
+  {G}wifux contact{RS}
+  ↳ Contact the developer (MSR)
+
+{LINE2}
+{G}  ─── With Arguments (Advanced) ───{RS}
+{LINE2}
+
+  {G}wifux -i wlan0 -b AA:BB:CC:DD:EE:FF -K{RS}
+  ↳ Pixie Dust on a specific router
+
+  {G}wifux -i wlan0 -b AA:BB:CC:DD:EE:FF -B{RS}
+  ↳ Bruteforce on a specific router
+
+  {G}wifux -i wlan0 -K --dts{RS}
+  ↳ Pixie Dust without touching Android WiFi settings
+
+{TIP} {M}For full argument list, see option 5 (Command List).{RS}
+''')
+    pause()
+
+# ────────────────────────────────────────────
 def main():
     handlers = {
         '1': section_intro,
@@ -587,6 +646,7 @@ def main():
         '6': section_examples,
         '7': section_troubleshoot,
         '8': section_warnings,
+        '9': section_wifux_commands,
     }
 
     while True:
