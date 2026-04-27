@@ -31,8 +31,8 @@ WiFuX v2.0 is a complete rewrite of the original v1 engine, introducing a global
 ---
 <div align="center">
   <a href="https://youtu.be/Y73jDqTqkxI">
-    <img src="https://img.shields.io/badge/wifux_video_tutorial-2EA043?style=for-the-badge&logo=android&logoColor=white" alt="WiFuX Full Setup Video Tutorial">
-  </a><br>
+    <img src="https://img.shields.io/badge/wifux_full_setup_video_tutorial-2EA043?style=for-the-badge&logo=android&logoColor=white" alt="WiFuX Full Setup Video Tutorial">
+  </a><br> </div>
 
 ## Requirements
 
