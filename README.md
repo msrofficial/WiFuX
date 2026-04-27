@@ -29,8 +29,10 @@ WiFuX v2.0 is a complete rewrite of the original v1 engine, introducing a global
 > This tool is intended for authorized security testing only. Only use it on networks you own or have explicit permission to test.
 
 ---
-<div align="center"><a href="https://youtu.be/Y73jDqTqkxI">Click Here For full Video Tutorial</a></div>
----
+<div align="center">
+  <a href="https://youtu.be/Y73jDqTqkxI">
+    <img src="https://img.shields.io/badge/wifux_video_tutorial-2EA043?style=for-the-badge&logo=android&logoColor=white" alt="WiFuX Full Setup Video Tutorial">
+  </a><br>
 
 ## Requirements
 
