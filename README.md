@@ -29,6 +29,8 @@ WiFuX v2.0 is a complete rewrite of the original v1 engine, introducing a global
 > This tool is intended for authorized security testing only. Only use it on networks you own or have explicit permission to test.
 
 ---
+<div align="center"><a href="https://youtu.be/Y73jDqTqkxI">Click Here For full Video Tutorial</a></div>
+---
 
 ## Requirements
 
