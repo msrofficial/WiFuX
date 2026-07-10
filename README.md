@@ -162,12 +162,6 @@ WiFuX is provided for educational and authorized penetration testing purposes on
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
 ## Author
 
 **MD Sakibur Rahman (MSR)**
