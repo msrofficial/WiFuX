@@ -40,7 +40,7 @@ WiFuX v2.0 is a complete rewrite of the original v1 engine, introducing a global
 ## Requirements
 
 - Android device with root access (Magisk or KernelSU)
-- [Termux](https://termux.dev) installed
+- [Termux](https://f-droid.org/en/packages/com.termux/) installed (from fdroid. not from playstore)
 - Root-capable WiFi adapter (internal wlan0 or external)
 
 ---
