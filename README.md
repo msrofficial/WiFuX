@@ -64,8 +64,8 @@ pkg update && pkg upgrade -y
 pkg install root-repo git tsu python wpa-supplicant pixiewps iw -y
 git clone https://github.com/msrofficial/WiFuX
 cd WiFuX
-chmod +x install.sh
-bash install.sh
+chmod +x installer.sh
+bash installer.sh
 ```
 
 ---
