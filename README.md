@@ -172,7 +172,7 @@ WiFuX is provided for educational and authorized penetration testing purposes on
 | Platform | Link |
 |---|---|
 | GitHub | [msrofficial](https://github.com/msrofficial) |
-| Facebook | [sakibur.msr](https://facebook.com/sakibur.msr) |
+| Facebook | [sakibur.msr](https://facebook.com/msr.sakibur) |
 | Instagram | [msr.sakibur](https://instagram.com/msr.sakibur) |
 | Telegram | [@msrofficial](https://t.me/msrofficial) |
 | Website | [msrsakibur.pro.bd](https://msrsakibur.pro.bd) |
