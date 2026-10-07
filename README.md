@@ -174,7 +174,7 @@ WiFuX is provided for educational and authorized penetration testing purposes on
 | GitHub | [msrofficial](https://github.com/msrofficial) |
 | Facebook | [sakibur.msr](https://facebook.com/msr.sakibur) |
 | Instagram | [msr.sakibur](https://instagram.com/msr.sakibur) |
-| Telegram | [@msrofficial](https://t.me/msrofficial) |
+| Telegram | [@msrofficial](https://t.me/msr0official) |
 | Website | [msrsakibur.pro.bd](https://msrsakibur.pro.bd) |
 
 Honorable mentions include: rofl0r, Rayhan, Alamin, Sojib, Sanji, Mustakin, Sakib, rizzi
