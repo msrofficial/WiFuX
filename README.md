@@ -13,7 +13,6 @@
 
 [![Version](https://img.shields.io/badge/version-2.0-brightgreen)](https://github.com/msrofficial/WiFuX/releases)
 [![Platform](https://img.shields.io/badge/platform-Android%20%2F%20Termux-blue)](https://termux.dev)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=msrofficial.wifux)](https://github.com/msrofficial/WiFuX)
 
 </div>
